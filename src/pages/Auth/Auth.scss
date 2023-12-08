@@ -1,31 +1,75 @@
-.auth-container-wrapper{
+.auth-container-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    .row{
+  .auth-wrapper {
+    display: flex;
+    height: 700px !important;
+    justify-content: center;
+    align-items: center;
+
+    .row {
+      .insta_left_img {
+        width: 90%;
+      }
+      .auth-left-con {
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
-        height: 100vh;
-        width: 100vw;
+        align-items: center;
 
+        .auth-login-box {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          align-items: center;
+          justify-content: center;
 
-        .insta_left_img{
-            width: 400px;
-        }
-
-        .auth-login-box{
+          .insta-img-top {
+            width: 200px;
+          }
+          .auth-login-form {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
-            align-items: center;
+            gap: 0.4rem;
+            font-size: 12px;
 
+            input {
+              height: 2.6rem;
+              padding: 10px;
+              outline: #333;
+              border: none;
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              border-radius: 0.3rem;
 
-            
-            .insta-img-top{
-                width: 200px;
+              &:focus {
+                outline: none;
+              }
             }
+
+            .submit-btn {
+              width: 200px;
+              height: 32px;
+              border-radius: 8px;
+              border: none;
+              background-color: #0095f6;
+              color: #ffffff;
+              font-size: 18px;
+              font-weight: 600;
+              cursor: pointer;
+              transition: all 0.3s ease-in-out;
+              &:hover {
+                background-color: #1877f2;
+                color: #ffffff;
+              }
+            }
+          }
         }
+      }
     }
-
-
-
+  }
 }
