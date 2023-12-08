@@ -69,7 +69,27 @@
             }
           }
         }
+        .auth-signUp-box{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 400;
+
+            .card-text{
+                display: flex;
+                gap: .2rem;
+            }
+        }
       }
     }
   }
+}
+.signUp-btn{
+    color: #0095F6;
+    font-weight: 600;
+    cursor: pointer;
 }

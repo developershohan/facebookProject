@@ -37,17 +37,19 @@ const Auth = () => {
                       <input className='w-100' type="text" name="" id="" placeholder='Password' />
                       <button type="submit" className='submit-btn my-2 w-100 '> Log in</button>
                     </form>
-                    <p className="card-text">Body</p>
+                    
                   </div>
 
                 </div>
-                <div className="card mt-4 shadow auth-login-box">
-                  <img className="card-img-top" src="holder.js/100px180/" alt="" />
+
+
+                <div className="card mt-4 shadow auth-login-box auth-signUp-box">
+
                   <div className="card-body">
 
                     <p className="card-text">
 
-                      <p> Do not have an account?</p><span onClick={()=>setShowSignUp(true)}>Sign up</span>
+                      <p> Do not have an account?</p><span className='signUp-btn' onClick={()=>setShowSignUp(true)}>Sign up</span>
                     </p>
                   </div>
                 </div>
