@@ -5,6 +5,7 @@ import instaBackPic from "../../../public/instaBackPic.png"
 import instaLogo from "../../../public/instaLogo.png"
 
 import Model from '../../components/Models/Model'
+import SignUpForm from '../../components/SignUpForm/SignUpForm'
 
 const Auth = () => {
 
@@ -14,16 +15,26 @@ const Auth = () => {
   return (
 
     <div>
+{showSignUp && <Model hide = {setShowSignUp} >
+  
+  <SignUpForm/>
+
+  </Model>}
+
+
+
+
+
 
       <div className="auth-container-wrapper">
         <div className="auth-wrapper">
           <div className="container">
             <div className="row ">
-            {showSignUp && <Model hide = {setShowSignUp} />}
+            
               <div className="col-md-6 ">
-                <img className='insta_left_img ' src={instaBackPic} alt="" />
+                <img className='insta_left_img' src={instaBackPic} alt="" />
               </div>
-              <div className="col-md-6  px-4  auth-left-con">
+              <div className="col-md-6 px-4 auth-left-con">
 
                 <div className="card shadow auth-login-box">
                   <div className="insta-img-top">
