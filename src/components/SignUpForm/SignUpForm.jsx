@@ -1,4 +1,5 @@
 
+import { Day, Month, Year } from "../../faker/dmy/Dmy";
 import "./SignUpForm.scss"
 import { FaQuestionCircle } from "react-icons/fa";
 
@@ -26,12 +27,23 @@ const SignUpForm = () => {
                         <div className="form-group d-flex gap-2 w-100">
                             <select className="form-control" name="" id="">
                                 <option>Day</option>
+                                {Day?.map((item,index) =>
+                                <option value={item} key={index} selected={ new Date().getDate() == item} >{item}</option>
+                                 )}
                             </select>
                             <select className="form-control" name="" id="">
                                 <option>Month</option>
+                                    {  Month?.map((item,index) =>
+                                    <option value= {item} key={index} selected={ new Date().getMonth() == index}>{item}</option>
+                                    )}
+
+
                             </select>
                             <select className="form-control" name="" id="">
                                 <option>Year</option>
+                                {  Year?.map((item,index) =>
+                                    <option value= {item} key={index} selected={ new Date().getFullYear() == item}>{item}</option>
+                                    )}
                             </select>
                         </div>
                     </div>

@@ -1,9 +1,21 @@
-.extra-opt-gender{
+.extra-opt-gender {
+  .form-group {
+    display: flex;
 
-    .form-check{
-        display: flex;
-        flex-direction: row-reverse;
-        width: 100%;
-        justify-content: space-between;
-    }
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .form-check {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
 }
