@@ -3,11 +3,13 @@ import { useState } from "react";
 import { Day, Month, Year } from "../../faker/dmy/Dmy";
 import "./SignUpForm.scss"
 import { FaQuestionCircle } from "react-icons/fa";
+import { createToast } from "../../helper/helpers";
+
 
 
 const SignUpForm = () => {
 
-    const [gender, setGender] = useState(" ")
+
     const [input, setInput] = useState({
         firstName: "",
         surName: "",
@@ -29,9 +31,20 @@ const SignUpForm = () => {
 
     }
 
+    const handleUserReg = (e) => {
+        e.preventDefault()
+        if (!input.firstName || !input.surName || !input.email || !input.password ) {
+            createToast("Please enter")
+        }
+        else {
+            createToast("Registered","success")
+        }
+
+    }
+
     return (
         <div>
-            <form action="" method="post" className='d-flex flex-column gap-2 '>
+            <form onSubmit={handleUserReg} action="" method="post" className='d-flex flex-column gap-2 '>
                 <div className="form-group h-form d-flex gap-2">
                     <input type="text" className="form-control" placeholder="First name" name="firstName" value={input.firstName} onChange={handleInputChange} />
                     <input type="text" className="form-control" placeholder="surname" name="surName" value={input.surName} onChange={handleInputChange} />
@@ -58,8 +71,6 @@ const SignUpForm = () => {
                                 {Month?.map((item, index) =>
                                     <option value={item} key={index} selected={new Date().getMonth() == index}>{item}</option>
                                 )}
-
-
                             </select>
                             <select className="form-control" name="year" value={input.year} onChange={handleInputChange}>
                                 <option>Year</option>
@@ -98,6 +109,7 @@ const SignUpForm = () => {
 
                     </div>
                 </div>
+               <button type="submit" className="btn btn-info text-light fw-bold">Sign Up</button>
             </form>
         </div>
     )
