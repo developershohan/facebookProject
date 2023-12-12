@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Day, Month, Year } from "../../faker/dmy/Dmy";
+import { Day, Month, Year } from "../../faker/dmy/Dmy.jsx";
 import "./SignUpForm.scss"
 import { FaQuestionCircle } from "react-icons/fa";
 import { createToast } from "../../helper/helpers";
@@ -34,7 +34,7 @@ const SignUpForm = () => {
     const handleUserReg = (e) => {
         e.preventDefault()
         if (!input.firstName || !input.surName || !input.email || !input.password ) {
-            createToast("Please enter")
+            createToast("All fields are required")
         }
         else {
             createToast("Registered","success")

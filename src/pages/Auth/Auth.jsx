@@ -11,6 +11,10 @@ const Auth = () => {
 
   const [showSignUp, setShowSignUp] = useState(false)
 
+  const handleLogin = (e)=>{
+e.preventDefault()
+  }
+
 
   return (
 
@@ -20,11 +24,6 @@ const Auth = () => {
   <SignUpForm/>
 
   </Model>}
-
-
-
-
-
 
       <div className="auth-container-wrapper">
         <div className="auth-wrapper">
@@ -42,11 +41,11 @@ const Auth = () => {
                   </div>
 
                   <div className="card-body w-100">
-                    <form action="" method="post" className='auth-login-form'>
+                    <form action="" onSubmit={handleLogin} method="post" className='auth-login-form'>
 
                       <input className='w-100' type="text" name="" id="" placeholder='Phone number, username, or email' />
                       <input className='w-100' type="text" name="" id="" placeholder='Password' />
-                      <button type="submit" className='submit-btn my-2 w-100 '> Log in</button>
+                      <button type="submit"  className='submit-btn my-2 w-100 '> Log in</button>
                     </form>
                     
                   </div>
