@@ -20,13 +20,10 @@ const Model = ({ children, hide }) => {
                             <hr />
                         </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
+                    <Modal.Body className=" my-3 ">
                         {children}
                     </Modal.Body>
-                    <Modal.Footer className='d-flex gap-2 mt-4'>
-                        <Button variant="secondary" onClick={() => hide(false)}>Close</Button>
-                        <Button variant="primary">Save changes</Button>
-                    </Modal.Footer>
+                    
                 </Modal.Dialog>
             </div>
         </div>
