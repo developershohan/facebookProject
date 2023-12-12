@@ -1,9 +1,11 @@
 
 import { useState } from "react";
-import { Day, Month, Year } from "../../faker/dmy/Dmy.jsx";
+import { Day, Month, Year } from "../../faker/dmy/Dmy";
 import "./SignUpForm.scss"
 import { FaQuestionCircle } from "react-icons/fa";
 import { createToast } from "../../helper/helpers";
+
+
 
 
 
