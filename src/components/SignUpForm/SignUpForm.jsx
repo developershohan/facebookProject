@@ -22,6 +22,10 @@ const SignUpForm = () => {
         year: "",
         gender: ""
     })
+    const [file, setFile] = useState([])
+
+
+
 
     const handleInputChange = (e) => {
         setInput((prevInput) => ({
@@ -35,15 +39,22 @@ const SignUpForm = () => {
 
     const handleUserReg = (e) => {
         e.preventDefault()
-        if (!input.firstName || !input.surName || !input.email || !input.password ) {
+        if (!input.firstName || !input.surName || !input.email || !input.password) {
             createToast("All fields are required")
         }
         else {
-            createToast("Registered","success")
+            createToast("Registered", "success")
         }
 
     }
 
+
+    const handleFileUpload = (e) => {
+        setFile((prevFile)=> [...prevFile, ...Array.from(e.target.files)])
+    }
+const handleFileDelete =(item) =>{
+    setFile(file.filter(data => data!=item))
+}
     return (
         <div>
             <form onSubmit={handleUserReg} action="" method="post" className='d-flex flex-column gap-2 '>
@@ -111,7 +122,32 @@ const SignUpForm = () => {
 
                     </div>
                 </div>
-               <button type="submit" className="btn btn-info text-light fw-bold">Sign Up</button>
+                <div className="signUp-files">
+                    <input type="file" multiple={true} className="form-control" placeholder="First name" name="files" onChange={handleFileUpload} />
+
+                </div>
+
+                <div className="row">
+
+                    {file?.map((item, index) => {
+
+                        const imageUrl = URL.createObjectURL(item)
+                        return (
+
+                            <div className="col-md-3" key={index}>
+                                <div className="card h-100 w-100">
+                                    <img src={imageUrl} className=" w-100 h-100 object-fit-contain" alt="" />
+                                    <h1 className="btn btn-danger" onClick={()=>handleFileDelete(item)}>x</h1>
+                                </div>
+                            </div>
+                        )
+                    })}
+
+
+                </div>
+
+
+                <button type="submit" className="btn btn-info text-light fw-bold">Sign Up</button>
             </form>
         </div>
     )
